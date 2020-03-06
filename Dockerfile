@@ -20,5 +20,6 @@ USER        container
 ENV         HOME /home/container
 WORKDIR     /home/container
 
+COPY        ./Engine.ini /home/container/ConanSandbox/Saved/Config/WindowsServer/Engine.ini
 COPY        ./entrypoint.sh /entrypoint.sh
 CMD         ["/bin/bash", "/entrypoint.sh"]
