@@ -11,9 +11,9 @@ export INTERNAL_IP=`ip route get 1 | awk '{print $NF;exit}'`
 [ ! -f /home/container/Configs/Sleep.eco ] && wget http://raw.githubusercontent.com/lakilla21/ServersEvolvedDocker/ECO-Server/Sleep.eco -P /home/container/Configs/
 
 # Adding Blacklist, Whitelist, and Admins
-sed -i "10 s/[]/[${WHITELIST}]/" /home/container/Configs/Users.eco
-sed -i "16 s/[]/[${BLACKLIST}]/" /home/container/Configs/Users.eco
-sed -i "22 s/[]/[${ADMINS}]/" /home/container/Configs/Users.eco
+sed -i "10 s/"$values":.*/"$values": [${WHITELIST}]/" /home/container/Configs/Users.eco
+sed -i "16 s/"$values":.*/"$values": [${BLACKLIST}]/" /home/container/Configs/Users.eco
+sed -i "22 s/"$values":.*/"$values": [${ADMINS}]/" /home/container/Configs/Users.eco
 
 # Replace Startup Variables
 MODIFIED_STARTUP="eval $(echo ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g')"
