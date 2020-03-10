@@ -6,9 +6,9 @@ export INTERNAL_IP=`ip route get 1 | awk '{print $NF;exit}'`
 
 # Load Config Files
 [ ! -d /home/container/Configs ] && mkdir -p /home/container/Configs/
-[ ! -f /home/container/Configs/Users.eco ] && wget http://raw.githubusercontent.com/lakilla21/ServersEvolvedDocker/ECO-Server/Users.eco?token=AFMH75624JG67KBIX4WRLIK6M44VA -P /home/container/Configs/
-[ ! -f /home/container/Configs/Difficulty.eco ] && wget http://raw.githubusercontent.com/lakilla21/ServersEvolvedDocker/ECO-Server/Difficulty.eco?token=AFMH7564W66QVBOKOFMH7WS6M44ZG -P /home/container/Configs/
-[ ! -f /home/container/Configs/Sleep.eco ] && wget http://raw.githubusercontent.com/lakilla21/ServersEvolvedDocker/ECO-Server/Sleep.eco?token=AFMH75YBYR77TAMV7KUV2AK6M446Y -P /home/container/Configs/
+[ ! -f /home/container/Configs/Users.eco ] && wget http://raw.githubusercontent.com/lakilla21/ServersEvolvedDocker/ECO-Server/Users.eco -P /home/container/Configs/
+[ ! -f /home/container/Configs/Difficulty.eco ] && wget http://raw.githubusercontent.com/lakilla21/ServersEvolvedDocker/ECO-Server/Difficulty.eco -P /home/container/Configs/
+[ ! -f /home/container/Configs/Sleep.eco ] && wget http://raw.githubusercontent.com/lakilla21/ServersEvolvedDocker/ECO-Server/Sleep.eco -P /home/container/Configs/
 
 # Adding Blacklist, Whitelist, and Admins
 sed -i "10s/[]/[${WHITELIST}]/" /home/container/Configs/Users.eco
