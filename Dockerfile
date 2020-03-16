@@ -12,7 +12,7 @@ RUN dpkg --add-architecture i386 \
  && apt update \
  && apt upgrade -y \
  && apt install -y software-properties-common iproute2 \
- && apt install -y --install-recommends wine64 lib32gcc1 libntlm0 wget winbind \
+ && apt install -y --install-recommends wine64 lib32gcc1 libntlm0 wget winbind gettext-base \
  && useradd -d /home/container -m container
 
 USER        container
