@@ -6,11 +6,11 @@ export INTERNAL_IP=`ip route get 1 | awk '{print $NF;exit}'`
 
 # Load Config Files
 [ ! -d /home/container/ConanSandbox/Saved/Config/WindowsServer ] && mkdir -p /home/container/ConanSandbox/Saved/Config/WindowsServer/
-[ ! -f /home/container/ConanSandbox/Saved/Config/WindowsServer/Engine.ini ] && wget http://raw.githubusercontent.com/lakilla21/ServersEvolvedDocker/Conan-Exiles/Engine.ini -P /home/container/ConanSandbox/Saved/Config/WindowsServer/
+[ ! -f /home/container/ConanSandbox/Saved/Config/WindowsServer/Engine.ini ] && wget http://raw.githubusercontent.com/lakilla21/ServersEvolvedDocker/Conan-Exiles/EngineInput.ini -P /home/container/ConanSandbox/Saved/Config/WindowsServer/
 [ ! -f /home/container/ConanSandbox/Saved/Config/WindowsServer/Game.ini ] && wget http://raw.githubusercontent.com/lakilla21/ServersEvolvedDocker/Conan-Exiles/Game.ini -P /home/container/ConanSandbox/Saved/Config/WindowsServer/
 [ ! -f /home/container/ConanSandbox/Saved/Config/WindowsServer/ServerSettings.ini ] && wget http://raw.githubusercontent.com/lakilla21/ServersEvolvedDocker/Conan-Exiles/ServerSettings.ini -P /home/container/ConanSandbox/Saved/Config/WindowsServer/
 
-envsubst < ConanSandbox/Saved/Config/WindowsServer/Engine.ini
+envsubst < ConanSandbox/Saved/Config/WindowsServer/EngineInput.ini > ConanSandbox/Saved/Config/WindowsServer/Engine.ini
 
 sleep 10
 
