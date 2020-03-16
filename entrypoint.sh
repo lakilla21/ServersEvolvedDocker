@@ -12,7 +12,7 @@ export INTERNAL_IP=`ip route get 1 | awk '{print $NF;exit}'`
 
 envsubst < ConanSandbox/Saved/Config/WindowsServer/EngineInput.ini > ConanSandbox/Saved/Config/WindowsServer/Engine.ini
 
-sleep 10
+rm ConanSandbox/Saved/Config/WindowsServer/EngineInput.ini
 
 # Update Server
 if [ ! -z ${SRCDS_APPID} ]; then
