@@ -10,7 +10,7 @@ export INTERNAL_IP=`ip route get 1 | awk '{print $NF;exit}'`
 [ ! -f /home/container/ConanSandbox/Saved/Config/WindowsServer/Game.ini ] && wget http://raw.githubusercontent.com/lakilla21/ServersEvolvedDocker/Conan-Exiles/Game.ini -P /home/container/ConanSandbox/Saved/Config/WindowsServer/
 [ ! -f /home/container/ConanSandbox/Saved/Config/WindowsServer/ServerSettings.ini ] && wget http://raw.githubusercontent.com/lakilla21/ServersEvolvedDocker/Conan-Exiles/ServerSettings.ini -P /home/container/ConanSandbox/Saved/Config/WindowsServer/
 
-envsubst < /home/container/ConanSandbox/Saved/Config/WindowsServer/engine.ini
+envsubst < ConanSandbox/Saved/Config/WindowsServer/engine.ini
 
 sleep 10
 
