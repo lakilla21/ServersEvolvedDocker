@@ -33,9 +33,9 @@ fi
 
 # Load Config Files
 [ ! -d /home/container/ConanSandbox/Saved/Config/WindowsServer ] && mkdir -p /home/container/ConanSandbox/Saved/Config/WindowsServer/
-[ ! -f /home/container/ConanSandbox/Saved/Config/WindowsServer/Engine.ini ] && wget http://raw.githubusercontent.com/lakilla21/testdocker/master/Engine.ini -P /home/container/ConanSandbox/Saved/Config/WindowsServer/
-[ ! -f /home/container/ConanSandbox/Saved/Config/WindowsServer/Game.ini ] && wget http://raw.githubusercontent.com/lakilla21/testdocker/master/Game.ini -P /home/container/ConanSandbox/Saved/Config/WindowsServer/
-[ ! -f /home/container/ConanSandbox/Saved/Config/WindowsServer/ServerSettings.ini ] && wget http://raw.githubusercontent.com/lakilla21/testdocker/master/ServerSettings.ini -P /home/container/ConanSandbox/Saved/Config/WindowsServer/
+[ ! -f /home/container/ConanSandbox/Saved/Config/WindowsServer/Engine.ini ] && wget http://raw.githubusercontent.com/lakilla21/ServersEvolvedDocker/Conan-Exiles/Engine.ini -P /home/container/ConanSandbox/Saved/Config/WindowsServer/
+[ ! -f /home/container/ConanSandbox/Saved/Config/WindowsServer/Game.ini ] && wget http://raw.githubusercontent.com/lakilla21/ServersEvolvedDocker/Conan-Exiles/Game.ini -P /home/container/ConanSandbox/Saved/Config/WindowsServer/
+[ ! -f /home/container/ConanSandbox/Saved/Config/WindowsServer/ServerSettings.ini ] && wget http://raw.githubusercontent.com/lakilla21/ServersEvolvedDocker/Conan-Exiles/ServerSettings.ini -P /home/container/ConanSandbox/Saved/Config/WindowsServer/
 
 
 # Edit the config with customer settings
