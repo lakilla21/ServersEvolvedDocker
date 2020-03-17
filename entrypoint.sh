@@ -7,8 +7,8 @@ export INTERNAL_IP=`ip route get 1 | awk '{print $NF;exit}'`
 # Load Config Files
 
 [ ! -d /home/container/citadel/Saved/Config/LinuxServer ] && mkdir -p /home/container/citadel/Saved/Config/LinuxServer
-[ ! -f /home/container/citadel/Saved/Config/LinuxServer/Engine.ini ] && wget https://raw.githubusercontent.com/lakilla21/ServersEvolvedDocker/Citadel-Server/EngineInput.ini -P /home/container/Citadel/Saved/Config/LinuxServer/
-[ ! -f /home/container/citadel/Saved/Config/LinuxServer/Game.ini ] && wget http://raw.githubusercontent.com/lakilla21/ServersEvolvedDocker/Citadel-Server/GameInput.ini -P /home/container/Citadel/Saved/Config/LinuxServer/
+[ ! -f /home/container/citadel/Saved/Config/LinuxServer/EngineInput.ini ] && wget https://raw.githubusercontent.com/lakilla21/ServersEvolvedDocker/Citadel-Server/EngineInput.ini -P /home/container/Citadel/Saved/Config/LinuxServer/
+[ ! -f /home/container/citadel/Saved/Config/LinuxServer/GameInput.ini ] && wget http://raw.githubusercontent.com/lakilla21/ServersEvolvedDocker/Citadel-Server/GameInput.ini -P /home/container/Citadel/Saved/Config/LinuxServer/
 
 envsubst < citadel/Saved/Config/LinuxServer/EngineInput.ini > citadel/Saved/Config/WindowsServer/Engine.ini
 envsubst < citadel/Saved/Config/LinuxServer/GameInput.ini > citadel/Saved/Config/WindowsServer/Game.ini
