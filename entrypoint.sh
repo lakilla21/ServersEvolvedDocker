@@ -12,8 +12,6 @@ export INTERNAL_IP=`ip route get 1 | awk '{print $NF;exit}'`
 
 envsubst < ConanSandbox/Saved/Config/WindowsServer/EngineInput.ini > ConanSandbox/Saved/Config/WindowsServer/Engine.ini
 
-rm ConanSandbox/Saved/Config/WindowsServer/EngineInput.ini
-
 # Update Server
 if [ ! -z ${SRCDS_APPID} ]; then
   ./steam/steamcmd.sh +@sSteamCmdForcePlatformType windows +login anonymous +force_install_dir /home/container +app_update ${SRCDS_APPID} +quit
