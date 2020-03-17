@@ -10,12 +10,11 @@ LABEL       author="Pterodactyl Software" maintainer="support@pterodactyl.io"
 ENV         DEBIAN_FRONTEND noninteractive
 # Install Dependencies
 RUN         dpkg --add-architecture i386 \
-            && apt update \
-            && apt upgrade -y \
-            && apt install -y tar curl gcc g++ iproute2 telnet net-tools netcat libfontconfig \
-            libgcc1 lib32z1 libcurl4-gnutls-dev:i386 libtinfo5:i386 libsdl1.2debian lib32stdc++6 libcurl4:i386 libcurl3-gnutls:i386 libncurses5:i386 lib32gcc1 gdb lib32tinfo5 \
+            && apt-get update \
+            && apt-get upgrade -y \
+            && apt-get install -y tar curl gcc g++ lib32gcc1 libgcc1 libcurl4-gnutls-dev:i386 libssl1.0.0:i386 libcurl4:i386 lib32tinfo5 libtinfo5:i386 lib32z1 lib32stdc++6 libncurses5:i386 libcurl3-gnutls:i386 iproute2 gdb libsdl1.2debian libfontconfig telnet net-tools netcat \
             && apt install -y --install-recommends wget gettext-base \
-            && useradd  -d /home/container -m container
+            && useradd -m -d /home/container container
 
 USER        container
 ENV         HOME /home/container
