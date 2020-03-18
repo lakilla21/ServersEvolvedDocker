@@ -17,6 +17,11 @@ if [ ! -z ${SRCDS_APPID} ]; then
     fi
 fi
 
+[ ! -d /home/container/csgo/cfg ] && mkdir -p /home/container/csgo/cfg
+[ ! -f /home/container/csgo/cfg/EngineInput.ini ] && wget https://raw.githubusercontent.com/lakilla21/ServersEvolvedDocker/CSGO/ServerInput.cfg -P /home/container/csgo/cfg/
+
+envsubst < csgo/cfg/ServerInput.cfg > csgo/cfg/Server.cfg
+
 # Replace Startup Variables
 MODIFIED_STARTUP=`eval echo $(echo ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g')`
 echo ":/home/container$ ${MODIFIED_STARTUP}"
