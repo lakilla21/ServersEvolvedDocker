@@ -10,8 +10,8 @@ export INTERNAL_IP=`ip route get 1 | awk '{print $NF;exit}'`
 [ ! -f /home/container/citadel/Saved/Config/LinuxServer/EngineInput.ini ] && wget https://raw.githubusercontent.com/lakilla21/ServersEvolvedDocker/Citadel-Server/EngineInput.ini -P /home/container/citadel/Saved/Config/LinuxServer/
 [ ! -f /home/container/citadel/Saved/Config/LinuxServer/GameInput.ini ] && wget http://raw.githubusercontent.com/lakilla21/ServersEvolvedDocker/Citadel-Server/GameInput.ini -P /home/container/citadel/Saved/Config/LinuxServer/
 
-envsubst < citadel/Saved/Config/LinuxServer/EngineInput.ini > citadel/Saved/Config/WindowsServer/Engine.ini
-envsubst < citadel/Saved/Config/LinuxServer/GameInput.ini > citadel/Saved/Config/WindowsServer/Game.ini
+envsubst < citadel/Saved/Config/LinuxServer/EngineInput.ini > citadel/Saved/Config/LinuxServer/Engine.ini
+envsubst < citadel/Saved/Config/LinuxServer/GameInput.ini > citadel/Saved/Config/LinuxServer/Game.ini
 
 # Update Server
 if [ ! -z ${SRCDS_APPID} ]; then
