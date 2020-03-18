@@ -15,7 +15,7 @@ envsubst < citadel/Saved/Config/LinuxServer/GameInput.ini > citadel/Saved/Config
 
 # Update Server
 if [ ! -z ${SRCDS_APPID} ]; then
-  ./steam/steamcmd.sh +login anonymous +force_install_dir /home/container +app_update ${SRCDS_APPID} +quit
+  ./steamcmd/steamcmd.sh +login anonymous +force_install_dir /home/container +app_update ${SRCDS_APPID} +quit
 fi
 
 # Replace Startup Variables
