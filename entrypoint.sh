@@ -20,8 +20,8 @@ fi
 #Custom Config Setup - Servers Evolved
 [ ! -d /home/container/csgo/cfg ] && mkdir -p /home/container/csgo/cfg
 rm csgo/cfg/ServerInput.cfg
-wget https://raw.githubusercontent.com/lakilla21/ServersEvolvedDocker/CSGO/ServerInput.cfg -P /home/container/csgo/cfg/
-envsubst < csgo/cfg/ServerInput.cfg > csgo/cfg/Server.cfg
+wget http://raw.githubusercontent.com/lakilla21/ServersEvolvedDocker/CSGO/ServerInput.cfg -P /home/container/csgo/cfg/
+envsubst < /home/container/csgo/cfg/ServerInput.cfg > /home/container/csgo/cfg/Server.cfg
 
 # Replace Startup Variables
 MODIFIED_STARTUP=`eval echo $(echo ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g')`
