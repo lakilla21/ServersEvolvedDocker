@@ -25,7 +25,7 @@ fi
 
 [ ! -d /home/container/garrysmod/cfg ] && mkdir -p /home/container/garrysmod/cfg
 rm garrysmod/cfg/ServerInput.cfg
-wget https://raw.githubusercontent.com/lakilla21/ServersEvolvedDocker/Gmod/ServerInput.cfg -P /home/container/
+wget https://raw.githubusercontent.com/lakilla21/ServersEvolvedDocker/Gmod/ServerInput.cfg -P /home/container/garrysmod/cfg/
 
 if [[ ${MANUAL_CONFIG} = 'false' ]]; then
   envsubst < garrysmod/cfg/ServerInput.cfg > garrysmod/cfg/server.cfg
