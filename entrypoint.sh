@@ -21,7 +21,11 @@ fi
 [ ! -d /home/container/csgo/cfg ] && mkdir -p /home/container/csgo/cfg
 rm csgo/cfg/ServerInput.cfg
 wget http://raw.githubusercontent.com/lakilla21/ServersEvolvedDocker/CSGO/ServerInput.cfg -P /home/container/csgo/cfg/
-envsubst < /home/container/csgo/cfg/ServerInput.cfg > /home/container/csgo/cfg/Server.cfg
+
+if [[ ${MANUAL_CONFIG} = 'false' ]]; then
+  envsubst < /home/container/csgo/cfg/ServerInput.cfg > /home/container/csgo/cfg/Server.cfg
+fi
+
 
 # Replace Startup Variables
 MODIFIED_STARTUP=`eval echo $(echo ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g')`
