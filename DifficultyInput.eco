@@ -1,5 +1,5 @@
 {
-  "CollaborationPreset": "MediumCollaboration",
+  "CollaborationPreset": "${COLLAB_PRESET}",
   "UnlearnRefundRate": 0.5,
   "SpecialtyCostMultiplier": 1.0,
   "SkillGainMultiplier": 1.0,
