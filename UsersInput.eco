@@ -7,19 +7,19 @@
   "WhiteList": {
     "System.String": {
       "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
-      "$values": []
+      "$values": [${WHITELIST}]
     }
   },
   "BlackList": {
     "System.String": {
       "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
-      "$values": []
+      "$values": [${BLACKLIST}]
     }
   },
   "Admins": {
     "System.String": {
       "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
-      "$values": []
+      "$values": [${ADMINS}]
     }
   },
   "Reputations": {
