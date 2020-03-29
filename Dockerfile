@@ -8,9 +8,8 @@ LABEL       author="Michael Parker" maintainer="parker@pterodactyl.io"
 
 RUN         useradd -d /home/container -m container \
             && apt update \
-            && apt upgrade
-            && apt install -y iproute2 unzip curl
-            && apt install -y --install-recommends wget gettext-base \
+            && apt install -y iproute2 unzip curl wget gettext-base 
+            && apt-get install -f
 
 USER        container
 ENV         USER=container HOME=/home/container
