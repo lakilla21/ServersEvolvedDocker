@@ -9,7 +9,6 @@ LABEL       author="Michael Parker" maintainer="parker@pterodactyl.io"
 RUN         useradd -d /home/container -m container \
             && apt update \
             && apt install -y gcc-6-base libgcc1 libc6 iproute2 unzip curl wget gettext-base
-            && ufw disable
 
 USER        container
 ENV         USER=container HOME=/home/container
