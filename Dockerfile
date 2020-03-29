@@ -11,6 +11,7 @@ RUN         useradd -d /home/container -m container \
             && apt install -y iproute2 unzip curl wget gettext-base 
             && apt-get install -f
 
+
 USER        container
 ENV         USER=container HOME=/home/container
 WORKDIR     /home/container
