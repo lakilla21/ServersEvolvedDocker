@@ -1,0 +1,16 @@
+{
+  "PublicServer": ${PUB_SRV},  
+  "Playtime": "",
+  "DiscordAddress": "${DISCORD_LINK}",
+  "Password": "${SRV_PWD}",
+  "Description": "${DESC}",
+  "DetailedDescription": "${DETAIL_DESC}",
+  "ServerCategory": "${SRV_CAT}",
+  "IPAddress": "Any",
+  "RemoteAddress": "",
+  "GameServerPort": ${SERVER_PORT},
+  "WebServerPort": ${WEB_PORT},
+  "Rate": 20,
+  "MaxConnections": -1,  
+  "UPnPEnabled": true
+}
