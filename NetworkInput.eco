@@ -12,5 +12,5 @@
   "WebServerPort": ${WEB_PORT},
   "Rate": 20,
   "MaxConnections": -1,  
-  "UPnPEnabled": true
+  "UPnPEnabled": false
 }
