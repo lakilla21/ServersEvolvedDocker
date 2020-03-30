@@ -7,7 +7,8 @@ export INTERNAL_IP=`ip route get 1 | awk '{print $NF;exit}'`
 # Load Config Files
 rm ConanSandbox/Saved/Config/WindowsServer/EngineInput.ini
 rm ConanSandbox/Saved/Config/WindowsServer/GameInput.ini
-rm ConanSandbox/Saved/Config/WindowsServer/ServerSettingsInput.ini 
+rm ConanSandbox/Saved/Config/WindowsServer/ServerSettingsInput.ini
+rm Engine/Config/BaseEngineInput.ini
 
 [ ! -d /home/container/ConanSandbox/Saved/Config/WindowsServer ] && mkdir -p /home/container/ConanSandbox/Saved/Config/WindowsServer/ && mkdir -p /home/container/Engine/Config/
 wget http://raw.githubusercontent.com/lakilla21/ServersEvolvedDocker/Conan-Exiles/EngineInput.ini -P /home/container/ConanSandbox/Saved/Config/WindowsServer/
