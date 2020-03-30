@@ -5,14 +5,22 @@ cd /home/container
 export INTERNAL_IP=`ip route get 1 | awk '{print $NF;exit}'`
 
 # Load Config Files
-[ ! -d /home/container/ConanSandbox/Saved/Config/WindowsServer ] && mkdir -p /home/container/ConanSandbox/Saved/Config/WindowsServer/
-[ ! -f /home/container/ConanSandbox/Saved/Config/WindowsServer/EngineInput.ini ] && wget http://raw.githubusercontent.com/lakilla21/ServersEvolvedDocker/Conan-Exiles/EngineInput.ini -P /home/container/ConanSandbox/Saved/Config/WindowsServer/
-[ ! -f /home/container/ConanSandbox/Saved/Config/WindowsServer/GameInput.ini ] && wget http://raw.githubusercontent.com/lakilla21/ServersEvolvedDocker/Conan-Exiles/GameInput.ini -P /home/container/ConanSandbox/Saved/Config/WindowsServer/
-[ ! -f /home/container/ConanSandbox/Saved/Config/WindowsServer/ServerSettingsInput.ini ] && wget http://raw.githubusercontent.com/lakilla21/ServersEvolvedDocker/Conan-Exiles/ServerSettingsInput.ini -P /home/container/ConanSandbox/Saved/Config/WindowsServer/
+rm ConanSandbox/Saved/Config/WindowsServer/EngineInput.ini
+rm ConanSandbox/Saved/Config/WindowsServer/GameInput.ini
+rm ConanSandbox/Saved/Config/WindowsServer/ServerSettingsInput.ini 
 
-envsubst < ConanSandbox/Saved/Config/WindowsServer/EngineInput.ini > ConanSandbox/Saved/Config/WindowsServer/Engine.ini
-envsubst < ConanSandbox/Saved/Config/WindowsServer/GameInput.ini > ConanSandbox/Saved/Config/WindowsServer/Game.ini
-envsubst < ConanSandbox/Saved/Config/WindowsServer/ServerSettingsInput.ini > ConanSandbox/Saved/Config/WindowsServer/ServerSettings.ini
+[ ! -d /home/container/ConanSandbox/Saved/Config/WindowsServer ] && mkdir -p /home/container/ConanSandbox/Saved/Config/WindowsServer/ && mkdir -p /home/container/Engine/Config/
+wget http://raw.githubusercontent.com/lakilla21/ServersEvolvedDocker/Conan-Exiles/EngineInput.ini -P /home/container/ConanSandbox/Saved/Config/WindowsServer/
+wget http://raw.githubusercontent.com/lakilla21/ServersEvolvedDocker/Conan-Exiles/GameInput.ini -P /home/container/ConanSandbox/Saved/Config/WindowsServer/
+wget http://raw.githubusercontent.com/lakilla21/ServersEvolvedDocker/Conan-Exiles/ServerSettingsInput.ini -P /home/container/ConanSandbox/Saved/Config/WindowsServer/
+wget http://raw.githubusercontent.com/lakilla21/ServersEvolvedDocker/Conan-Exiles/BaseEngineInput.ini -P /home/container/Engine/Config
+
+if [[ ${MANUAL_CONFIG} = 'false' ]]; then
+    envsubst < ConanSandbox/Saved/Config/WindowsServer/EngineInput.ini > ConanSandbox/Saved/Config/WindowsServer/Engine.ini
+    envsubst < ConanSandbox/Saved/Config/WindowsServer/GameInput.ini > ConanSandbox/Saved/Config/WindowsServer/Game.ini
+    envsubst < ConanSandbox/Saved/Config/WindowsServer/ServerSettingsInput.ini > ConanSandbox/Saved/Config/WindowsServer/ServerSettings.ini
+    envsubst < Engine/Config/BaseEngineInput.ini > Engine/Config/BaseEngine.ini
+fi
 
 # Update Server
 if [ ! -z ${SRCDS_APPID} ]; then
