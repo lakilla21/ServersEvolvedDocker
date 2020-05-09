@@ -14,8 +14,10 @@ if [[ ${MANUAL_CONFIG} = 'false' ]]; then
 fi
 
 # Update Server
-if [ ! -z ${SRCDS_APPID} ]; then
-  ./steamcmd/steamcmd.sh +login anonymous +force_install_dir /home/container +app_update ${SRCDS_APPID} +quit
+if [[ ${AUTO_UPDATE} = 'true' ]]; then
+  if [ ! -z ${SRCDS_APPID} ]; then
+    ./steamcmd/steamcmd.sh +login anonymous +force_install_dir /home/container +app_update ${SRCDS_APPID} +quit
+  fi
 fi
 
 # Replace Startup Variables
