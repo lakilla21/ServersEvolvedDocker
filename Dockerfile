@@ -20,5 +20,5 @@ ENV         HOME /home/container
 WORKDIR     /home/container
 
 COPY        ./entrypoint.sh /entrypoint.sh
-VOLUME		cluster543eb74a:/home/container/cluster
+VOLUME		/home/container/cluster
 CMD         ["/bin/bash", "/entrypoint.sh"]
