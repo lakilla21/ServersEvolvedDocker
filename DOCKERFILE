@@ -1,7 +1,7 @@
 # ----------------------------------
 # ARK Clustered server Dockerfile
 # Environment: Source Engine
-# Minimum Panel Version: 0.6.0
+# Minimum Panel Version: 0.6.0 
 # ----------------------------------
 FROM        ubuntu:18.04
 
