@@ -19,6 +19,7 @@ USER        container
 ENV         HOME /home/container
 WORKDIR     /home/container
 
+RUN			-v cluster543eb74a:/home/container/cluster
+
 COPY        ./entrypoint.sh /entrypoint.sh
-VOLUME		/home/container/cluster
 CMD         ["/bin/bash", "/entrypoint.sh"]
