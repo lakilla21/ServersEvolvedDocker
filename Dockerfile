@@ -5,7 +5,7 @@
 # ----------------------------------
 FROM        ubuntu:18.04
 
-LABEL       author="William Brun" maintainer="william@serversevolved.io"
+LABEL       author="William Brun " maintainer="william@serversevolved.io"
 
 ENV         DEBIAN_FRONTEND noninteractive
 # Install Dependencies
