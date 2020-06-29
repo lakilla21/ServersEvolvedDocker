@@ -19,7 +19,5 @@ USER        container
 ENV         HOME /home/container
 WORKDIR     /home/container
 
-RUN			--mount source=cluster543eb74a,target=/home/container/cluster
-
 COPY        ./entrypoint.sh /entrypoint.sh
 CMD         ["/bin/bash", "/entrypoint.sh"]
